@@ -4,7 +4,7 @@ Donate link: http://www.brunoxu.com/
 Tags: Open Sans, Google Fonts, Google Web Fonts, useso, 360前端公共库, Google字体库, Google公共库, Useso公共库, Useso字体库
 Requires at least: 3.0
 Tested up to: 3.9.2
-Stable tag: 1.0
+Stable tag: trunk
 
 用360前端公共库Useso接管Google字体库和Google公共库，无需设置，插件安装激活后即刻生效。
 
@@ -26,6 +26,10 @@ Stable tag: 1.0
 2. Activate the plugin through the 'Plugins' menu in WordPress background.
 
 == Changelog ==
+
+= 1.1 =
+* 2014-08-26
+* Cover login and register page.
 
 = 1.0 =
 * 2014-08-22
