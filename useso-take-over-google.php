@@ -6,7 +6,8 @@ Description: 用360前端公共库Useso接管Google字体库和Google公共库�
 Author: Bruno Xu
 Author URI: http://www.brunoxu.com/
 Version: 1.1
-License: GPL
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 function gf_is_login_page() {
