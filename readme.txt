@@ -27,6 +27,11 @@ Stable tag: trunk
 
 == Changelog ==
 
+= 1.2 =
+* 2014-09-10
+* Cover another reference method like '@import url(...)'.
+* Optimized action hooks.
+
 = 1.1 =
 * 2014-08-26
 * Cover login and register page.
