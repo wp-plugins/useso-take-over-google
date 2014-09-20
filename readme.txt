@@ -27,6 +27,10 @@ Stable tag: trunk
 
 == Changelog ==
 
+= 1.3 =
+* 2014-09-20
+* Add theme 'pinnacle'(use redux framework) compatibility.
+
 = 1.2 =
 * 2014-09-10
 * Cover another reference method like '@import url(...)'.
