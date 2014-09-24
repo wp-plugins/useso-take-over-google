@@ -27,6 +27,10 @@ Stable tag: trunk
 
 == Changelog ==
 
+= 1.4 =
+* 2014-09-25
+* Solved google fonts imported by 'Web Font Loader'.
+
 = 1.3 =
 * 2014-09-20
 * Add theme 'pinnacle'(use redux framework) compatibility.
