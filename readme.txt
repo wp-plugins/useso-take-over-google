@@ -27,6 +27,10 @@ Stable tag: trunk
 
 == Changelog ==
 
+= 1.5 =
+* 2014-10-05
+* Use lug.ustc.edu.cn resources when SSL is used.
+
 = 1.4 =
 * 2014-09-25
 * Solved google fonts imported by 'Web Font Loader'.

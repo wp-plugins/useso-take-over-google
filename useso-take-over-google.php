@@ -5,7 +5,7 @@ Plugin URI: http://www.brunoxu.com/useso-take-over-google.html
 Description: 用360前端公共库Useso接管Google字体库和Google公共库，无需设置，插件安装激活后即刻生效。
 Author: Bruno Xu
 Author URI: http://www.brunoxu.com/
-Version: 1.4
+Version: 1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -43,6 +43,9 @@ function useso_take_over_google_filter($content)
 	google fonts imported by 'Web Font Loader'
 	*/
 	$webfont_js = USESO_TAKE_OVER_GOOGLE_PLUGIN_URL.'webfont_v1.5.3.js';
+	if (is_ssl()) {
+		$webfont_js = USESO_TAKE_OVER_GOOGLE_PLUGIN_URL.'webfont_https_v1.5.3.js';
+	}
 	$content = str_ireplace('//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', substr($webfont_js, strpos($webfont_js,'//')), $content);
 
 	/*
@@ -74,8 +77,13 @@ function useso_take_over_google_str_handler($matches)
 {
 	$str = $matches[0];
 
-	$str = str_ireplace('//fonts.googleapis.com/', '//fonts.useso.com/', $str);
-	$str = str_ireplace('//ajax.googleapis.com/', '//ajax.useso.com/', $str);
+	if (!is_ssl()) {
+		$str = str_ireplace('//fonts.googleapis.com/', '//fonts.useso.com/', $str);
+		$str = str_ireplace('//ajax.googleapis.com/', '//ajax.useso.com/', $str);
+	} else {
+		$str = str_ireplace('//fonts.googleapis.com/', '//fonts.lug.ustc.edu.cn/', $str);
+		$str = str_ireplace('//ajax.googleapis.com/', '//ajax.lug.ustc.edu.cn/', $str);
+	}
 
 	return $str;
 }
