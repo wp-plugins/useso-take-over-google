@@ -5,7 +5,7 @@ Plugin URI: http://www.brunoxu.com/useso-take-over-google.html
 Description: 用360前端公共库Useso接管Google字体库和Google公共库，无需设置，插件安装激活后即刻生效。
 Author: Bruno Xu
 Author URI: http://www.brunoxu.com/
-Version: 1.5
+Version: 1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -69,6 +69,12 @@ function useso_take_over_google_filter($content)
 		"useso_take_over_google_str_handler",
 		$content
 	);
+
+	/*
+	gravatar imgs
+	*/
+	$regexp = "/(\d+|www).gravatar.com/i";
+	$content = preg_replace($regexp, 'gravatar.duoshuo.com', $content);
 
 	return $content;
 }
