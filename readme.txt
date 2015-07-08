@@ -29,7 +29,8 @@ Stable tag: trunk
 
 = 1.6.1 =
 * 2015-07-08
-* Use geekzu.org resouces take over lug.ustc.edu.cn resouces.
+* Replace "lug.ustc.edu.cn" resouces with "geekzu.org" resouces.
+* Add handler for "secure.gravatar.com" images.
 
 = 1.6 =
 * 2015-07-06
