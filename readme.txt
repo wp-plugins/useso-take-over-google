@@ -27,6 +27,10 @@ Stable tag: trunk
 
 == Changelog ==
 
+= 1.6.1 =
+* 2015-07-08
+* Use geekzu.org resouces take over lug.ustc.edu.cn resouces.
+
 = 1.6 =
 * 2015-07-06
 * Replace gravatar imgs with gravatar.duoshuo.com resources.

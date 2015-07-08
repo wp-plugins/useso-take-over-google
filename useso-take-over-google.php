@@ -5,7 +5,7 @@ Plugin URI: http://www.brunoxu.com/useso-take-over-google.html
 Description: 用360前端公共库Useso接管Google字体库和Google公共库，无需设置，插件安装激活后即刻生效。
 Author: Bruno Xu
 Author URI: http://www.brunoxu.com/
-Version: 1.6
+Version: 1.6.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -72,9 +72,16 @@ function useso_take_over_google_filter($content)
 
 	/*
 	gravatar imgs
+	http://1.gravatar.com/avatar/11fee321889526d1df2393655f48bd0c?s=26&d=retro&r=g
+	https://secure.gravatar.com/avatar/06a2950d128ec9faf155e28d9e889baa?s=120
 	*/
 	$regexp = "/(\d+|www).gravatar.com/i";
 	$content = preg_replace($regexp, 'gravatar.duoshuo.com', $content);
+	//$content = preg_replace($regexp, 'fdn.geekzu.org/avatar', $content);
+
+	$regexp = "/secure.gravatar.com/i";
+	$content = preg_replace($regexp, 'sdn.geekzu.org/avatar', $content);
+
 
 	return $content;
 }
@@ -86,9 +93,15 @@ function useso_take_over_google_str_handler($matches)
 	if (!is_ssl()) {
 		$str = str_ireplace('//fonts.googleapis.com/', '//fonts.useso.com/', $str);
 		$str = str_ireplace('//ajax.googleapis.com/', '//ajax.useso.com/', $str);
+
+		//$str = str_ireplace('//fonts.googleapis.com/', '//fonts.geekzu.org/', $str);
+		//$str = str_ireplace('//ajax.googleapis.com/', '//fdn.geekzu.org/ajax/', $str);
 	} else {
-		$str = str_ireplace('//fonts.googleapis.com/', '//fonts.lug.ustc.edu.cn/', $str);
-		$str = str_ireplace('//ajax.googleapis.com/', '//ajax.lug.ustc.edu.cn/', $str);
+		//$str = str_ireplace('//fonts.googleapis.com/', '//fonts.lug.ustc.edu.cn/', $str);
+		//$str = str_ireplace('//ajax.googleapis.com/', '//ajax.lug.ustc.edu.cn/', $str);
+
+		$str = str_ireplace('//fonts.googleapis.com/', '//fonts.geekzu.org/', $str);
+		$str = str_ireplace('//ajax.googleapis.com/', '//sdn.geekzu.org/ajax/', $str);
 	}
 
 	return $str;
