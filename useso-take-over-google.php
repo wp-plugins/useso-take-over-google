@@ -78,7 +78,6 @@ function useso_take_over_google_filter($content)
 	$regexp = "/(\d+|www|secure|cn).gravatar.com\/avatar/i";
 	$content = preg_replace($regexp, 'sdn.geekzu.org/avatar', $content);
 
-
 	return $content;
 }
 
