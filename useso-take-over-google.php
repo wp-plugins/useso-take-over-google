@@ -75,11 +75,7 @@ function useso_take_over_google_filter($content)
 	http://1.gravatar.com/avatar/11fee321889526d1df2393655f48bd0c?s=26&d=retro&r=g
 	https://secure.gravatar.com/avatar/06a2950d128ec9faf155e28d9e889baa?s=120
 	*/
-	$regexp = "/(\d+|www).gravatar.com/i";
-	$content = preg_replace($regexp, 'gravatar.duoshuo.com', $content);
-	//$content = preg_replace($regexp, 'fdn.geekzu.org/avatar', $content);
-
-	$regexp = "/secure.gravatar.com/i";
+	$regexp = "/(\d+|www|secure|cn).gravatar.com\/avatar/i";
 	$content = preg_replace($regexp, 'sdn.geekzu.org/avatar', $content);
 
 
