@@ -5,7 +5,7 @@ Plugin URI: http://www.brunoxu.com/useso-take-over-google.html
 Description: 用360前端公共库Useso接管Google字体库和Google公共库，无需设置，插件安装激活后即刻生效。
 Author: Bruno Xu
 Author URI: http://www.brunoxu.com/
-Version: 1.6.1
+Version: 1.6.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -39,6 +39,8 @@ function useso_take_over_google_obend($content) {
 
 function useso_take_over_google_filter($content)
 {
+	$content = apply_filters('useso_take_over_google_content_filter_before', $content);
+
 	/*
 	google fonts imported by 'Web Font Loader'
 	*/
@@ -46,7 +48,8 @@ function useso_take_over_google_filter($content)
 	if (is_ssl()) {
 		$webfont_js = USESO_TAKE_OVER_GOOGLE_PLUGIN_URL.'webfont_https_v1.5.3.js';
 	}
-	$content = str_ireplace('//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', substr($webfont_js, strpos($webfont_js,'//')), $content);
+	//$content = str_ireplace('//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', substr($webfont_js, strpos($webfont_js,'//')), $content);
+	$content = preg_replace("|//ajax.googleapis.com/ajax/libs/webfont/[\d\.]+/webfont.js|i", substr($webfont_js, strpos($webfont_js,'//')), $content);
 
 	/*
 	<link rel="stylesheet" id="open-sans-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&amp;subset=latin%2Clatin-ext&amp;ver=3.9.2" type="text/css" media="all">
@@ -78,7 +81,7 @@ function useso_take_over_google_filter($content)
 	$regexp = "/(\d+|www|secure|cn).gravatar.com\/avatar/i";
 	$content = preg_replace($regexp, 'sdn.geekzu.org/avatar', $content);
 
-	return $content;
+	return apply_filters('useso_take_over_google_content_filter_after', $content);
 }
 
 function useso_take_over_google_str_handler($matches)
