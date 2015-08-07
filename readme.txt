@@ -3,7 +3,7 @@ Contributors: xiaoxu125634
 Donate link: http://www.brunoxu.com/
 Tags: Open Sans, Google Fonts, Google Web Fonts, useso, 360前端公共库, Google字体库, Google公共库, Useso公共库, Useso字体库
 Requires at least: 3.0
-Tested up to: 4.2.3
+Tested up to: 4.2.4
 Stable tag: trunk
 
 用360前端公共库Useso接管Google字体库和Google公共库，无需设置，插件安装激活后即刻生效。
